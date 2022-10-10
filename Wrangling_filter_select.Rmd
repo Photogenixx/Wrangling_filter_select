@@ -98,23 +98,19 @@ movies %>%
 It is also nice to save your subset data for use later in your analysis. Notice that each time we ran the code above, R just showed us the data, it did not save it anywhere. Creating a new object allows us to refer back to that filtered/selected data later.
 
 ```{r}
-movies_modern <- movies %>%    # Remember that '<-' assigns a new object. Preserve your original dataset by creating a new name
-  filter(year >= 1965) %>%
-  drop_na(budget)
 
-# When running the code above, nothing seems to happen...
-# But really, you didn't ask R to show anything, just to save something
-# ask for movies_2000 to make sure it worked
+
+
 movies_modern
 ```
 
 
-One more useful way to filter a character variable is to base it on part of the value, or a string subset. You can use `str_detect()` for this. To use this function, just add the variable name and words or partial word you would like to detect.
+One more useful way to filter a character variable is to base it on part of the value, or a string subset. You can use `str_detect()` for this. To use this function, just add the variable name and words or partial word you would like to detect
 
-- `str_detect(variable_name, "Word to filter")`
-
-```{r}
-movies %>%
+-  `str_detect(variable_name, "Word to filter") 
+   
+````{r}
+movies %>%  
   filter(str_detect(title, "Godzilla"))
 
 # Which Batman movies are in the dataset?
@@ -160,7 +156,7 @@ Filtering and variable selection can happen in the same pipe. Give me the title,
 movies %>%
   filter(year >= 2000 & Action == 1) %>%
   drop_na(budget) %>%
-  select(title, rating, budget)
+  select(title, rating, budget) %>%
 
 # Why doesn't the following code work?
 movies %>%
@@ -223,12 +219,19 @@ movies_2000 <- movies %>%
 print(movies_2000$title)
 ```
 
+
+
 3. Create a subset of only Harry Potter movies with the title, rating, budget, and votes. Which movies are included in this data? Which is highest rated? Which has the most votes on imdb.com?
 
+
+
+
+
 ```{r}
-
+Harry_Potter <- movies %>%
+```  
+  filter(str_detect(title, "Harry Potter))
 ```
-
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
