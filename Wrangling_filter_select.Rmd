@@ -1,7 +1,11 @@
 ---
 title: "Data Wrangling - Part I"
 subtitle: "StatPREP R Workshops"
+<<<<<<< HEAD
 author: "Daryl Perry"
+=======
+author: "Dperry1"
+>>>>>>> b7e9472f3ce47ce46f5ba6ba6c8018f4bd666453
 output: html_document
 ---
 
